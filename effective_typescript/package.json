@@ -1,0 +1,16 @@
+{
+  "name": "effective_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.9.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jian Han <jianhan2018@gmail.com>",
+  "license": "ISC"
+}
