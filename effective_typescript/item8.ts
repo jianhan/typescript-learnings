@@ -1,11 +1,23 @@
 /*
  * @Author: your name
  * @Date: 2020-05-21 20:10:52
- * @LastEditTime: 2020-05-21 20:32:58
+ * @LastEditTime: 2020-05-21 20:33:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /typescript-learnings/effective_typescript/item8.ts
  */
+
+/**Things to Remember
+• Know how to tell whether you’re in type space or value space while reading a
+TypeScript expression. Use the TypeScript playground to build an intuition for
+this.
+• Every value has a type, but types do not have values. Constructs such as type and
+interface exist only in the type space.
+• "foo" might be a string literal, or it might be a string literal type. Be aware of this
+distinction and understand how to tell which it is.
+• typeof , this , and many other operators and keywords have different meanings
+in type space and value space.
+• Some constructs such as class or enum introduce both a type and a value. */
 
 class Cylinder {
     radius = 1;
