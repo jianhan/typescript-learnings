@@ -1,11 +1,13 @@
 /*
  * @Author: your name
  * @Date: 2020-05-30 10:57:03
- * @LastEditTime: 2020-05-30 11:29:05
+ * @LastEditTime: 2020-05-30 11:48:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /typescript-learnings/effective_typescript/item19.ts
  */
+
+/**Item 19: Avoid Cluttering Your Code with Inferable Types */
 
 /**Things to Remember
 • Avoid writing type annotations when TypeScript can infer the same type.
@@ -13,7 +15,11 @@
 local variables in their bodies.
 • Consider using explicit annotations for object literals and function return types
 even when they can be inferred. This will help prevent implementation errors
-from surfacing in user code. */
+from surfacing in user code.
+• Only use type annotation when typescript do not have enough context to identify
+via inferred way.
+*/
+
 
 // TypeScript many annotations are unnecessary. Declaring types for all your
 // variables is counterproductive and is considered poor style
