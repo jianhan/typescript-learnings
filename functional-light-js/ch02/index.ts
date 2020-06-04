@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-04 21:28:55
- * @LastEditTime: 2020-06-04 21:48:03
+ * @LastEditTime: 2020-06-04 22:00:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /typescript-learnings/functional-light-js/ch02/index.ts
@@ -49,6 +49,16 @@ console.log(parseIntResult, parseInt("1", 0), parseInt("2", 1), parseInt("3", 2)
 const parseIntUnaryResult = ["1", "2", "3"].map(unary(parseInt));
 console.log(parseIntUnaryResult) // this works fine
 
+/*
+.####.########..########.##....##.########.####.########.##....##
+..##..##.....##.##.......###...##....##.....##.....##.....##..##.
+..##..##.....##.##.......####..##....##.....##.....##......####..
+..##..##.....##.######...##.##.##....##.....##.....##.......##...
+..##..##.....##.##.......##..####....##.....##.....##.......##...
+..##..##.....##.##.......##...###....##.....##.....##.......##...
+.####.########..########.##....##....##....####....##.......##...
+*/
+
 /*** One on One */
 const identity = <T>(v: T): T => v
 
@@ -73,3 +83,34 @@ function upper(txt) {
 
 output("Hello World", upper);     // HELLO WORLD
 output("Hello World");            // Hello World
+
+/*
+..######...#######..##....##..######..########....###....##....##.########....########.##.....##.##....##..######.
+.##....##.##.....##.###...##.##....##....##......##.##...###...##....##.......##.......##.....##.###...##.##....##
+.##.......##.....##.####..##.##..........##.....##...##..####..##....##.......##.......##.....##.####..##.##......
+.##.......##.....##.##.##.##..######.....##....##.....##.##.##.##....##.......######...##.....##.##.##.##.##......
+.##.......##.....##.##..####.......##....##....#########.##..####....##.......##.......##.....##.##..####.##......
+.##....##.##.....##.##...###.##....##....##....##.....##.##...###....##.......##.......##.....##.##...###.##....##
+..######...#######..##....##..######.....##....##.....##.##....##....##.......##........#######..##....##..######.
+*/
+
+// some API does not allow you to pass a simple value, it must be a function, event if
+// that function just return a simple value, for instance, promise then
+// doesn't work:
+p1.then(foo).then(p2).then(bar);
+
+// instead:
+p1.then(foo).then(function () { return p2; }).then(bar);
+
+// or arrow function version
+p1.then(foo).then(() => p2).then(bar);
+
+// with a little helper, to convert a value into a function that just return that value
+function constant(v) {
+    return function value() {
+        return v;
+    };
+}
+
+
+p1.then(foo).then(constant(p2)).then(bar);
