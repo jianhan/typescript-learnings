@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-04 21:28:55
- * @LastEditTime: 2020-06-04 21:44:22
+ * @LastEditTime: 2020-06-04 21:48:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /typescript-learnings/functional-light-js/ch02/index.ts
@@ -48,3 +48,28 @@ console.log(parseIntResult, parseInt("1", 0), parseInt("2", 1), parseInt("3", 2)
 
 const parseIntUnaryResult = ["1", "2", "3"].map(unary(parseInt));
 console.log(parseIntUnaryResult) // this works fine
+
+/*** One on One */
+const identity = <T>(v: T): T => v
+
+// one of the usage is to filter
+var words = "   Now is the time for all...  ".split(/\s|\b/);
+words;
+// ["","Now","is","the","time","for","all","...",""]
+
+words.filter(identity);
+// ["Now","is","the","time","for","all","..."]
+
+// another usage is to transformation
+
+function output(msg, formatFn = identity) {
+    msg = formatFn(msg);
+    console.log(msg);
+}
+
+function upper(txt) {
+    return txt.toUpperCase();
+}
+
+output("Hello World", upper);     // HELLO WORLD
+output("Hello World");            // Hello World
