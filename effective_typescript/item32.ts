@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-05 20:55:31
- * @LastEditTime: 2020-06-05 21:17:02
+ * @LastEditTime: 2020-06-05 21:18:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /typescript-learnings/effective_typescript/item32.ts
@@ -20,6 +20,8 @@ TypeScript code. */
 
 /***If you create an interface whose properties are union types, you should ask whether
 the type would make more sense as a union of more precise interfaces. */
+
+/***It's all about dealing with relationship between properties */
 
 /**# this pattern is useful when you find yourself in a situation where lot of null checks you need to do
  * , especially check related values, for instance min and max in the example below
