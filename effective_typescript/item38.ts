@@ -1,13 +1,20 @@
 /*
  * @Author: your name
  * @Date: 2020-06-07 14:41:15
- * @LastEditTime: 2020-06-07 14:50:22
+ * @LastEditTime: 2020-06-07 14:50:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /typescript-learnings/effective_typescript/item38.ts
  */
 
 /***Item 38: Use the Narrowest Possible Scope for any Types */
+
+/***Things to Remember
+• Make your uses of any as narrowly scoped as possible to avoid undesired loss of
+type safety elsewhere in your code.
+• Never return an any type from a function. This will silently lead to the loss of
+type safety for any client calling the function.
+• Consider @ts-ignore as an alternative to any if you need to silence one error. */
 
 function processBar(b: Bar) { /* ... */ }
 function f() {
